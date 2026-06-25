@@ -54,37 +54,30 @@
       }
 
       .medium-dropdown-trigger {
-        background: linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
-        box-shadow:
-          inset 0 1px 0 rgba(212, 175, 55, 0.08),
-          0 4px 16px rgba(0, 0, 0, 0.6);
+        background: #000;
+        color: #fff;
       }
 
       .medium-dropdown-trigger:hover,
       .medium-dropdown-trigger[aria-expanded="true"] {
         border-color: #d4af37;
-        box-shadow:
-          inset 0 1px 0 rgba(212, 175, 55, 0.12),
-          0 0 0 1px rgba(212, 175, 55, 0.15),
-          0 6px 20px rgba(0, 0, 0, 0.65);
+        background: #000;
       }
 
       .medium-dropdown-menu {
-        background: linear-gradient(180deg, #0c0c0c 0%, #050505 100%);
-        box-shadow:
-          0 12px 40px rgba(0, 0, 0, 0.75),
-          0 0 0 1px rgba(212, 175, 55, 0.2),
-          inset 0 1px 0 rgba(212, 175, 55, 0.06);
+        background: #000;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.85);
       }
 
       .medium-option {
-        color: rgba(255, 255, 255, 0.75);
+        background: #000;
+        color: #fff;
       }
 
       .medium-option:hover,
       .medium-option.selected {
-        background: rgba(212, 175, 55, 0.1);
-        color: #e8c547;
+        background: #111;
+        color: #fff;
       }
     </style>
   </head>
@@ -173,12 +166,12 @@
                 type="button"
                 aria-haspopup="listbox"
                 aria-expanded="false"
-                class="medium-dropdown-trigger flex w-full items-center justify-between rounded-lg border border-gold-500/50 px-4 py-2.5 text-xs font-medium tracking-widest text-gold-400 uppercase transition-all duration-300 focus:border-gold-500 focus:outline-none sm:text-sm"
+                class="medium-dropdown-trigger flex w-full items-center justify-between rounded-lg border border-gold-500/50 bg-black px-4 py-2.5 text-xs font-medium tracking-widest text-white uppercase transition-all duration-300 focus:border-gold-500 focus:outline-none sm:text-sm"
               >
                 <span id="medium-label">Pick Medium</span>
                 <svg
                   id="medium-chevron"
-                  class="h-4 w-4 shrink-0 text-gold-500/70 transition-transform duration-300"
+                  class="h-4 w-4 shrink-0 text-white/70 transition-transform duration-300"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -191,7 +184,7 @@
               <ul
                 id="medium-menu"
                 role="listbox"
-                class="medium-dropdown-menu absolute top-[calc(100%+6px)] left-0 z-20 hidden w-full overflow-hidden rounded-lg border border-gold-500/35 py-1"
+                class="medium-dropdown-menu absolute top-[calc(100%+6px)] left-0 z-20 hidden w-full overflow-hidden rounded-lg border border-gold-500/35 bg-black py-1"
               >
                 <li>
                   <button
@@ -199,7 +192,7 @@
                     role="option"
                     data-value="oil"
                     data-label="Oil Painting"
-                    class="medium-option w-full px-4 py-2.5 text-left text-xs tracking-widest uppercase transition-colors duration-200 sm:text-sm"
+                    class="medium-option w-full bg-black px-4 py-2.5 text-left text-xs tracking-widest text-white uppercase transition-colors duration-200 sm:text-sm"
                   >
                     Oil Painting
                   </button>
@@ -210,7 +203,7 @@
                     role="option"
                     data-value="watercolor"
                     data-label="Watercolor"
-                    class="medium-option w-full px-4 py-2.5 text-left text-xs tracking-widest uppercase transition-colors duration-200 sm:text-sm"
+                    class="medium-option w-full bg-black px-4 py-2.5 text-left text-xs tracking-widest text-white uppercase transition-colors duration-200 sm:text-sm"
                   >
                     Watercolor
                   </button>
@@ -221,7 +214,7 @@
                     role="option"
                     data-value="sketch"
                     data-label="Sketch"
-                    class="medium-option w-full px-4 py-2.5 text-left text-xs tracking-widest uppercase transition-colors duration-200 sm:text-sm"
+                    class="medium-option w-full bg-black px-4 py-2.5 text-left text-xs tracking-widest text-white uppercase transition-colors duration-200 sm:text-sm"
                   >
                     Sketch
                   </button>
@@ -232,7 +225,7 @@
                     role="option"
                     data-value="cinematic"
                     data-label="Cinematic"
-                    class="medium-option w-full px-4 py-2.5 text-left text-xs tracking-widest uppercase transition-colors duration-200 sm:text-sm"
+                    class="medium-option w-full bg-black px-4 py-2.5 text-left text-xs tracking-widest text-white uppercase transition-colors duration-200 sm:text-sm"
                   >
                     Cinematic
                   </button>

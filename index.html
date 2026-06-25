@@ -53,6 +53,11 @@
         box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
       }
 
+      .medium-dropdown {
+        overflow: visible;
+        z-index: 50;
+      }
+
       .medium-dropdown-trigger {
         background: #000;
         color: #fff;
@@ -161,7 +166,7 @@
               Upscale
             </button>
 
-            <div id="medium-dropdown" class="relative flex-1">
+            <div id="medium-dropdown" class="medium-dropdown relative z-50 flex-1 overflow-visible">
               <button
                 id="medium-trigger"
                 type="button"

@@ -85,13 +85,19 @@
         background: #111;
         color: #fff;
       }
+
+      #site-title,
+      #upscale-btn {
+        color: #ffffff !important;
+      }
     </style>
   </head>
   <body class="h-full bg-luxury-bg font-body text-white antialiased">
     <div class="flex h-full flex-col items-center justify-center px-4 py-6 sm:px-8">
       <!-- Title -->
       <h1
-        class="font-script mb-6 shrink-0 text-center text-5xl leading-none text-white sm:mb-8 sm:text-6xl md:text-7xl"
+        id="site-title"
+        class="font-script mb-6 shrink-0 text-center text-5xl leading-none !text-white sm:mb-8 sm:text-6xl md:text-7xl"
       >
         Hydra Luxury Studio
       </h1>
@@ -161,7 +167,7 @@
             <button
               id="upscale-btn"
               type="button"
-              class="flex-1 rounded-lg border border-gold-500/45 bg-luxury-surface/80 px-4 py-2.5 text-xs font-medium tracking-widest text-white uppercase transition-all duration-300 hover:border-gold-500 hover:bg-gold-500/10 sm:text-sm"
+              class="flex-1 rounded-lg border border-gold-500/45 bg-luxury-surface/80 px-4 py-2.5 text-xs font-medium tracking-widest !text-white uppercase transition-all duration-300 hover:border-gold-500 hover:bg-gold-500/10 hover:!text-white sm:text-sm"
             >
               Upscale
             </button>

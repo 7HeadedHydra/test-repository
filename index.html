@@ -21,9 +21,10 @@
                 surface: "#121212",
               },
               silver: {
-                400: "#d4d4d4",
-                500: "#b0b0b0",
-                600: "#8a8a8a",
+                DEFAULT: "#C0C0C0",
+                400: "#C0C0C0",
+                500: "#A8A9AD",
+                600: "#8A8B8F",
               },
             },
             fontFamily: {
@@ -38,6 +39,11 @@
       };
     </script>
     <style>
+      :root {
+        --color-silver: #c0c0c0;
+        --color-silver-muted: #a8a9ad;
+      }
+
       html,
       body {
         height: 100%;
@@ -45,8 +51,8 @@
       }
 
       .upload-zone.drag-over {
-        border-color: #b0b0b0;
-        background-color: rgba(176, 176, 176, 0.06);
+        border-color: var(--color-silver);
+        background-color: rgba(192, 192, 192, 0.06);
       }
 
       .side-photo {
@@ -65,7 +71,7 @@
 
       .medium-dropdown-trigger:hover,
       .medium-dropdown-trigger[aria-expanded="true"] {
-        border-color: #b0b0b0;
+        border-color: var(--color-silver);
         background: #000;
       }
 

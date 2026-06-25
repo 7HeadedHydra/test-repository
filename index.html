@@ -67,6 +67,7 @@
       .medium-dropdown-menu {
         background: #000;
         box-shadow: 0 12px 40px rgba(0, 0, 0, 0.85);
+        z-index: 50;
       }
 
       .medium-option {
@@ -184,7 +185,7 @@
               <ul
                 id="medium-menu"
                 role="listbox"
-                class="medium-dropdown-menu absolute top-[calc(100%+6px)] left-0 z-20 hidden w-full overflow-hidden rounded-lg border border-gold-500/35 bg-black py-1"
+                class="medium-dropdown-menu fixed hidden rounded-lg border border-gold-500/35 bg-black py-1"
               >
                 <li>
                   <button
@@ -313,12 +314,38 @@
         mediumMenu.classList.add("hidden");
         mediumTrigger.setAttribute("aria-expanded", "false");
         mediumChevron.classList.remove("rotate-180");
+        mediumMenu.style.top = "";
+        mediumMenu.style.left = "";
+        mediumMenu.style.width = "";
+      }
+
+      function positionMediumMenu() {
+        const rect = mediumTrigger.getBoundingClientRect();
+        const gap = 6;
+        const menuHeight = mediumMenu.offsetHeight;
+        const spaceBelow = window.innerHeight - rect.bottom - gap;
+        const spaceAbove = rect.top - gap;
+        const openUpward =
+          spaceBelow < menuHeight && spaceAbove >= menuHeight
+            ? true
+            : spaceBelow < menuHeight && spaceAbove > spaceBelow;
+
+        mediumMenu.style.width = `${rect.width}px`;
+        mediumMenu.style.left = `${rect.left}px`;
+
+        if (openUpward) {
+          mediumMenu.style.top = `${rect.top - gap - menuHeight}px`;
+          mediumChevron.classList.remove("rotate-180");
+        } else {
+          mediumMenu.style.top = `${rect.bottom + gap}px`;
+          mediumChevron.classList.add("rotate-180");
+        }
       }
 
       function openMediumMenu() {
         mediumMenu.classList.remove("hidden");
         mediumTrigger.setAttribute("aria-expanded", "true");
-        mediumChevron.classList.add("rotate-180");
+        positionMediumMenu();
       }
 
       mediumTrigger.addEventListener("click", () => {
@@ -338,7 +365,15 @@
       });
 
       document.addEventListener("click", (e) => {
-        if (!mediumDropdown.contains(e.target)) closeMediumMenu();
+        if (!mediumDropdown.contains(e.target) && !mediumMenu.contains(e.target)) {
+          closeMediumMenu();
+        }
+      });
+
+      window.addEventListener("resize", () => {
+        if (mediumTrigger.getAttribute("aria-expanded") === "true") {
+          positionMediumMenu();
+        }
       });
 
       fileInput.addEventListener("change", (e) => {

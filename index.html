@@ -20,10 +20,10 @@
                 bg: "#080808",
                 surface: "#121212",
               },
-              gold: {
-                400: "#e8c547",
-                500: "#d4af37",
-                600: "#b8942e",
+              silver: {
+                400: "#d4d4d4",
+                500: "#b0b0b0",
+                600: "#8a8a8a",
               },
             },
             fontFamily: {
@@ -45,8 +45,8 @@
       }
 
       .upload-zone.drag-over {
-        border-color: #d4af37;
-        background-color: rgba(212, 175, 55, 0.06);
+        border-color: #b0b0b0;
+        background-color: rgba(176, 176, 176, 0.06);
       }
 
       .side-photo {
@@ -65,7 +65,7 @@
 
       .medium-dropdown-trigger:hover,
       .medium-dropdown-trigger[aria-expanded="true"] {
-        border-color: #d4af37;
+        border-color: #b0b0b0;
         background: #000;
       }
 
@@ -111,14 +111,14 @@
             alt="Portrait placeholder"
             width="240"
             height="320"
-            class="side-photo aspect-[3/4] w-full rounded-lg object-cover ring-1 ring-gold-500/30"
+            class="side-photo aspect-[3/4] w-full rounded-lg object-cover ring-1 ring-silver-500/30"
           />
           <img
             src="https://picsum.photos/seed/portrait2/240/320"
             alt="Portrait placeholder"
             width="240"
             height="320"
-            class="side-photo aspect-[3/4] w-full rounded-lg object-cover ring-1 ring-gold-500/30"
+            class="side-photo aspect-[3/4] w-full rounded-lg object-cover ring-1 ring-silver-500/30"
           />
         </div>
 
@@ -128,7 +128,7 @@
           <label
             id="upload-zone"
             for="file-input"
-            class="upload-zone group relative flex h-[min(52vh,420px)] w-[min(38vw,280px)] cursor-pointer flex-col items-center justify-center overflow-hidden rounded-xl border-2 border-dashed border-gold-500/55 bg-luxury-surface/60 transition-all duration-300 hover:border-gold-500 hover:bg-luxury-surface/90"
+            class="upload-zone group relative flex h-[min(52vh,420px)] w-[min(38vw,280px)] cursor-pointer flex-col items-center justify-center overflow-hidden rounded-xl border-2 border-dashed border-silver-500/55 bg-luxury-surface/60 transition-all duration-300 hover:border-silver-500 hover:bg-luxury-surface/90"
           >
             <input id="file-input" type="file" accept="image/*" class="sr-only" />
 
@@ -167,7 +167,7 @@
             <button
               id="upscale-btn"
               type="button"
-              class="flex-1 rounded-lg border border-gold-500/45 bg-luxury-surface/80 px-4 py-2.5 text-xs font-medium tracking-widest !text-white uppercase transition-all duration-300 hover:border-gold-500 hover:bg-gold-500/10 hover:!text-white sm:text-sm"
+              class="flex-1 rounded-lg border border-silver-500/45 bg-luxury-surface/80 px-4 py-2.5 text-xs font-medium tracking-widest !text-white uppercase transition-all duration-300 hover:border-silver-500 hover:bg-silver-500/10 hover:!text-white sm:text-sm"
             >
               Upscale
             </button>
@@ -178,7 +178,7 @@
                 type="button"
                 aria-haspopup="listbox"
                 aria-expanded="false"
-                class="medium-dropdown-trigger flex w-full items-center justify-between rounded-lg border border-gold-500/50 bg-black px-4 py-2.5 text-xs font-medium tracking-widest text-white uppercase transition-all duration-300 focus:border-gold-500 focus:outline-none sm:text-sm"
+                class="medium-dropdown-trigger flex w-full items-center justify-between rounded-lg border border-silver-500/50 bg-black px-4 py-2.5 text-xs font-medium tracking-widest text-white uppercase transition-all duration-300 focus:border-silver-500 focus:outline-none sm:text-sm"
               >
                 <span id="medium-label">Pick Medium</span>
                 <svg
@@ -196,7 +196,7 @@
               <ul
                 id="medium-menu"
                 role="listbox"
-                class="medium-dropdown-menu fixed hidden rounded-lg border border-gold-500/35 bg-black py-1"
+                class="medium-dropdown-menu fixed hidden rounded-lg border border-silver-500/35 bg-black py-1"
               >
                 <li>
                   <button
@@ -263,14 +263,14 @@
             alt="Pet placeholder"
             width="240"
             height="320"
-            class="side-photo aspect-[3/4] w-full rounded-lg object-cover ring-1 ring-gold-500/30"
+            class="side-photo aspect-[3/4] w-full rounded-lg object-cover ring-1 ring-silver-500/30"
           />
           <img
             src="https://picsum.photos/seed/pet2/240/320"
             alt="Pet placeholder"
             width="240"
             height="320"
-            class="side-photo aspect-[3/4] w-full rounded-lg object-cover ring-1 ring-gold-500/30"
+            class="side-photo aspect-[3/4] w-full rounded-lg object-cover ring-1 ring-silver-500/30"
           />
         </div>
       </div>
@@ -314,7 +314,7 @@
         uploadPrompt.classList.remove("hidden");
         fileInput.value = "";
         resetBtn.classList.add("hidden");
-        upscaleBtn.classList.remove("border-gold-500", "bg-gold-500/15");
+        upscaleBtn.classList.remove("border-silver-500", "bg-silver-500/15");
         selectedMedium = "";
         mediumLabel.textContent = "Pick Medium";
         mediumOptions.forEach((opt) => opt.classList.remove("selected"));
@@ -412,8 +412,8 @@
 
       upscaleBtn.addEventListener("click", () => {
         if (!previewImage.src) return;
-        upscaleBtn.classList.toggle("border-gold-500");
-        upscaleBtn.classList.toggle("bg-gold-500/15");
+        upscaleBtn.classList.toggle("border-silver-500");
+        upscaleBtn.classList.toggle("bg-silver-500/15");
       });
     </script>
   </body>
